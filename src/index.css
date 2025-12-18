@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@layer utilities {
+  .animate-slide-in {
+    transition: transform 0.3s ease-out;
+  }
+}
