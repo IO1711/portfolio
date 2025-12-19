@@ -12,7 +12,7 @@ const Poster = () => {
     }, []);
     return (
         <>
-            <div className="w-full bg-cover bg-left bg-[url(/portfolioBg2.png)] px-10 py-30 md:py-50">
+            <div className="w-full bg-cover bg-left bg-[url(/portfolioBg2-1.webp)] px-10 py-30 md:py-50">
 
                 <div
                     data-aos="zoom-in"
