@@ -1,3 +1,4 @@
+import PersonalInfo from "./main/PersonalInfo";
 import Poster from "./main/Poster"
 import ProjectCard from "./main/ProjectCard";
 
@@ -20,7 +21,7 @@ const AppLayout = () => {
         {projects.map( project => {
             return <ProjectCard key={project.id} title={project.title} images={project.images} description={project.description} link={project.link} techStack={project.techStack}/>
         })}
-        <div>text</div>
+        <PersonalInfo/>
     </>
 }
 
