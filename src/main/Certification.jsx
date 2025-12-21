@@ -30,7 +30,7 @@ const Certification = () => {
   const prev = () => setIndex((i) => (i - 1 + certificates.length) % certificates.length);
 
   return (
-    <div className="w-full py-20 bg-white">
+    <div id="certification" className="w-full py-20 bg-white">
       <h2 className="text-5xl font-bold text-center text-black mb-12">
         Certifications
       </h2>

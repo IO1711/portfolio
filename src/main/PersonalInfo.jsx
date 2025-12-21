@@ -35,9 +35,11 @@ const PersonalInfo = () => {
                             <p className="text-black font-semibold text-lg">
                                 Apple Developer Academy · Naples, Italy
                             </p>
+                            <p className="text-black/60 font-semibold text-sm">
+                                    October, 2025 - present
+                                </p>
                             <p className="text-black/70 mt-1">
-                                iOS Engineering · Human Interface Design · Project-based learning  
-                                <span className="italic"> (2025, September – 2026, June)</span>
+                                iOS Engineering · Human Interface Design · Project-based learning
                             </p>
                         </div>
                     </div>
