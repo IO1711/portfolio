@@ -1,7 +1,7 @@
 const PersonalInfo = () => {
     return (
         <>
-            <div className="w-full flex justify-center bg-cover md:bg-auto bg-left bg-[url(/portfolioBg_2.webp)] px-6 md:px-10 py-20 md:py-32">
+            <div className="w-full flex justify-center bg-cover md:bg-auto bg-left bg-[url(/portfolioBg_2.webp)] px-6 md:px-10 py-20 md:py-20">
 
                 {/* LIQUID GLASS CARD */}
                 <div
@@ -72,14 +72,14 @@ const PersonalInfo = () => {
                                 <p className="text-black/60 font-semibold text-sm">
                                     October, 2024 - October, 2025
                                 </p>
-                                <p className="text-black/70 mt-1">
+                                <div className="text-black/70 mt-1">
                                 <ul>
                                     <li>- maintain and update existing Geological and Geophysical Databases and GIS solutions</li>
                                     <li>- develop and maintain links between various databases</li>
                                     <li>- ensure the good upload of data in the Databases and to develop tools for import from different formats (XLS spreadsheets, SQL server, etc.)</li>
                                     <li>and more.</li>
                                 </ul>   
-                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>
