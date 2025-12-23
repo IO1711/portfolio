@@ -3,14 +3,19 @@ import Certification from "./main/Certification";
 import PersonalInfo from "./main/PersonalInfo";
 import Poster from "./main/Poster"
 import ProjectCard from "./main/ProjectCard";
+import Contact from "./main/Contact";
 
 const AppLayout = () => {
 
     const projectRef = useRef(null);
+    const contactRef = useRef(null);
 
     const handleViewProjects = () => {
-        console.log("Ref function called")
         projectRef.current?.scrollIntoView({behavior: "smooth"});
+    }
+
+    const handleViewContacts = () => {
+        contactRef.current?.scrollIntoView({behavior: "smooth"});
     }
 
     const projects = [
@@ -37,13 +42,14 @@ const AppLayout = () => {
     ];
 
     return <>
-        <Poster refFunction={handleViewProjects}/>
+        <Poster refFunction={handleViewProjects} handleViewContacts={handleViewContacts}/>
         <div ref={projectRef} id="projects" className="w-full flex justify-center text-6xl font-bold text-black/80 m-2">Projects</div>
         {projects.map( project => {
             return <ProjectCard key={project.id} platform={project.platform} title={project.title} images={project.images} description={project.description} link={project.link} linkDesc={project.linkDesc} techStack={project.techStack}/>
         })}
         <PersonalInfo/>
         <Certification/>
+        <Contact contactRef={contactRef} handleViewContacts={handleViewContacts}/>
     </>
 }
 
