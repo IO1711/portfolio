@@ -5,6 +5,12 @@ const Certification = () => {
   // Local certificates data (NOT in state)
   const certificates = [
     {
+      title: "Apple Developer Academy Certificate",
+      image: "/apple_certificate.webp",
+      pdf: "/apple_certificate.pdf",
+      issuer: "Apple Developer Acdemy / Universita Degli Studi di Napoli Federico II"
+    },
+    {
       title: "React framework certificate",
       image: "/react_certificate.webp",
       pdf: "/react_certificate.pdf",
