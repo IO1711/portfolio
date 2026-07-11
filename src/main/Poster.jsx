@@ -24,9 +24,11 @@ const Poster = (props) => {
                 shadow-[0_10px_25px_rgba(0,0,0,0.2)]
                 z-30
             ">
-                <div className="absolute inset-0 flex items-center justify-center text-xs text-black/40 font-semibold text-center break-words px-2">
-                    My super-duper photo
-                </div>
+                <img
+                    src="/profile.webp"
+                    alt="Bilolbek Rayimov"
+                    className="absolute inset-0 h-full w-full object-cover"
+                />
             </div>
 
             <div className="
@@ -38,9 +40,11 @@ const Poster = (props) => {
                 shadow-[0_10px_25px_rgba(0,0,0,0.2)]
                 z-30
             ">
-                <div className="absolute inset-0 flex items-center justify-center text-black/40 font-semibold">
-                    My super-duper photo
-                </div>
+                <img
+                    src="/profile.webp"
+                    alt="Bilolbek Rayimov"
+                    className="absolute inset-0 h-full w-full object-cover"
+                />
             </div>
 
             <div
@@ -62,7 +66,7 @@ const Poster = (props) => {
 
                 {/* SUBTITLE */}
                 <p className="text-lg text-[#4A4A4A] mt-4">
-                    Full-Stack Engineer · 3D Enthusiast · iOS engineer (becoming)
+                    Full-Stack Engineer · 3D Enthusiast · iOS engineer
                 </p>
 
                 {/* TECH STACK ICONS */}

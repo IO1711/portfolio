@@ -85,15 +85,15 @@ const ProjectCard = (props) => {
         <div className={`
         relative overflow-hidden shadow-xl flex items-center justify-center
         ${props.platform === "mobile" 
-            ? "rounded-[32px] h-[500px] bg-black/5" 
+            ? "rounded-[32px] w-fit max-w-full mx-auto" 
             : "rounded-[24px] h-72"}
         `}>
         <img
             src={images[index]}
             className={`
-            transition-all duration-500
+            block transition-all duration-500
             ${props.platform === "mobile"
-                ? "max-h-full max-w-full object-contain"
+                ? "h-auto max-h-[500px] w-auto max-w-full object-contain"
                 : "w-full h-full object-cover"}
             `}
         />
@@ -135,15 +135,15 @@ const ProjectCard = (props) => {
                     : "border-white/30 opacity-60 hover:opacity-100"
                 }
                 ${props.platform === "mobile"
-                    ? "w-16 h-28"        // tall thumbnails for mobile
+                    ? "flex items-center justify-center p-1"        // size adapts to tall screenshots
                     : "w-20 h-14"}       // wide thumbnails for web
                 `}
             >
                 <img 
                 src={src} 
                 className={`
-                    w-full h-full object-cover
-                    ${props.platform === "mobile" ? "object-contain bg-black/10" : ""}
+                    block object-cover
+                    ${props.platform === "mobile" ? "h-auto max-h-28 w-auto max-w-16 object-contain" : "w-full h-full"}
                 `} 
                 />
             </button>
