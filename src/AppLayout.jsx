@@ -22,6 +22,16 @@ const AppLayout = () => {
         {
             "id" : 1,
             "platform" : "web",
+            "title" : "IAmRich3D",
+            "images" : ["/i_am_rich.png"],
+            "description" : "A simple three.js webpage that utilizes 3D text and materials in Three.js",
+            "link" : "https://iamrich3d.netlify.app/",
+            "linkDesc" : "",
+            "techStack" : ["JavaScript", "Three.js"]
+        },
+        {
+            "id" : 2,
+            "platform" : "web",
             "title" : "Consulting website",
             "images" : ["/consulting1.png", "/consulting2.png", "/consulting3.png"],
             "description" : "A secure, full-stack consulting management platform built with <b>JWT authentication</b>, cloud document storage via <b>Wasabi</b>, real-time <b>Telegram bot</b> notifications, and granular role/enrollment-based access control. Engineered for efficiency, automation, and scalability—showcasing strong expertise in modern backend architecture, frontend UX, and system integration.",
@@ -30,7 +40,7 @@ const AppLayout = () => {
             "techStack" : ["JavaScript", "React", "Zustand", "React Router", "Java", "Spring Boot", "Spring Security", "PostgreSQL"]
         },
         {
-            "id" : 2,
+            "id" : 3,
             "platform" : "mobile",
             "title" : "Pick2Plot",
             "images" : ["/Pick2Plot_1.PNG", "/Pick2Plot_2.PNG", "/Pick2Plot_3.PNG"],
