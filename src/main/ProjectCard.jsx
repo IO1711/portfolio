@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const ProjectCard = (props) => {
   const images = props.images/*["/image1.png", "/image2.png", "/image3.png"]*/;
+  const isMobileProject = props.platform === "mobile";
   const [index, setIndex] = useState(0);
 
   const nextImage = () => setIndex((i) => (i + 1) % images.length);
@@ -79,20 +80,25 @@ const ProjectCard = (props) => {
         </div>
 
         {/* RIGHT SIDE — NEW MODERN IMAGE SLIDER */}
-        <div className="relative w-full">
+        <div
+          className={`
+            relative w-full
+            ${isMobileProject ? "flex items-start justify-center gap-4" : ""}
+          `}
+        >
 
         {/* MAIN IMAGE */}
         <div className={`
         relative overflow-hidden shadow-xl flex items-center justify-center
-        ${props.platform === "mobile" 
-            ? "rounded-[32px] w-fit max-w-full mx-auto" 
+        ${isMobileProject
+            ? "rounded-[32px] w-fit max-w-full" 
             : "rounded-[24px] h-72"}
         `}>
         <img
             src={images[index]}
             className={`
             block transition-all duration-500
-            ${props.platform === "mobile"
+            ${isMobileProject
                 ? "h-auto max-h-[500px] w-auto max-w-full object-contain"
                 : "w-full h-full object-cover"}
             `}
@@ -121,8 +127,13 @@ const ProjectCard = (props) => {
         </div>
 
 
-        {/* THUMBNAILS BELOW */}
-        <div className="flex gap-3 mt-4 justify-center">
+        {/* THUMBNAILS */}
+        <div
+          className={`
+            flex gap-3 justify-center
+            ${isMobileProject ? "mt-0 flex-col" : "mt-4"}
+          `}
+        >
             {images.map((src, i) => (
             <button
                 key={i}
@@ -134,7 +145,7 @@ const ProjectCard = (props) => {
                     ? "border-[#00c8ff] shadow-[0_0_10px_rgba(0,200,255,0.5)]"
                     : "border-white/30 opacity-60 hover:opacity-100"
                 }
-                ${props.platform === "mobile"
+                ${isMobileProject
                     ? "flex items-center justify-center p-1"        // size adapts to tall screenshots
                     : "w-20 h-14"}       // wide thumbnails for web
                 `}
@@ -143,7 +154,7 @@ const ProjectCard = (props) => {
                 src={src} 
                 className={`
                     block object-cover
-                    ${props.platform === "mobile" ? "h-auto max-h-28 w-auto max-w-16 object-contain" : "w-full h-full"}
+                    ${isMobileProject ? "h-auto max-h-28 w-auto max-w-16 object-contain" : "w-full h-full"}
                 `} 
                 />
             </button>

@@ -66,7 +66,7 @@ const Poster = (props) => {
 
                 {/* SUBTITLE */}
                 <p className="text-lg text-[#4A4A4A] mt-4">
-                    Full-Stack Engineer · 3D Enthusiast · iOS engineer
+                    Full-Stack Engineer · 3D Modeller · iOS engineer
                 </p>
 
                 {/* TECH STACK ICONS */}
