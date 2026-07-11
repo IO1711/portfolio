@@ -1,16 +1,60 @@
-# React + Vite
+# Bilolbek's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is my personal portfolio website. It is built to present who I am as a developer and to showcase my skills, selected projects, achievements, and professional growth in one place.
 
-Currently, two official plugins are available:
+The site highlights:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- My technical skills and areas of interest
+- Featured projects with screenshots and short descriptions
+- Certifications and achievements
+- Personal background and contact information
 
-## React Compiler
+## Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The main goal of this portfolio is to give visitors, recruiters, and potential collaborators a clear view of my work and capabilities. It serves as a central place where I can present the projects I have built, the technologies I use, and the progress I am making as a software engineer.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- Tailwind CSS
+- AOS
+- React Icons
+
+## Run Locally
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npm run dev
+```
+
+3. Build for production:
+
+```bash
+npm run build
+```
+
+4. Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+- `src/main/Poster.jsx` for the hero section
+- `src/main/ProjectCard.jsx` for featured project cards
+- `src/main/Certification.jsx` for certifications and achievements
+- `src/main/PersonalInfo.jsx` for personal details
+- `src/main/Contact.jsx` for contact links
+
+## Notes
+
+This portfolio is an evolving project and will continue to grow as I add new work, refine the design, and update the content.
