@@ -20,6 +20,26 @@ const AppLayout = () => {
 
     const projects = [
         {
+            "id" : 5,
+            "platform" : "web",
+            "title" : "Tool to fix AI generated tables",
+            "images" : ["/table_editor.png"],
+            "description" : "Since the times when AI started being able to create docx documents, I have received so many requests from my friends to check and fix their documents with tables. In order to remove the repeated work, I created this easy to use tool. Now they can just open their AI generated documents and fix all the tables with one click.",
+            "link" : "https://docxtablefixer.netlify.app/",
+            "linkDesc" : "",
+            "techStack" : ["JavaScript", "Vite", "HTML", "CSS"]
+        },
+        {
+            "id" : 4,
+            "platform" : "web",
+            "title" : "Modernization Navigator",
+            "images" : ["/bob_placeholder.png"],
+            "description" : "Modernization Navigator is a tool for Bob IDE that scans a code repository, figures out what technologies it uses, checks what could break during an upgrade, and recommends the safest way to modernize it. It also creates a report you can review in a local browser viewer.",
+            "link" : "https://github.com/IO1711/ModernizationNavigator",
+            "linkDesc" : "",
+            "techStack" : ["TypeScript", "Node.js", "MCP", "Zod"]
+        },
+        {
             "id" : 1,
             "platform" : "web",
             "title" : "IAmRich3D",
