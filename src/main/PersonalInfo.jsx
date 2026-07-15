@@ -21,10 +21,10 @@ const PersonalInfo = () => {
                         I create fast, elegant websites with full end-to-end functionality — clean UI, solid back-end, and everything in between. 
                         I love turning ideas into polished, high-performance digital experiences.
                     </p>
-                    <p className="text-lg md:text-xl text-black/90 leading-relaxed mt-10">
+                    {/*<p className="text-lg md:text-xl text-black/90 leading-relaxed mt-10">
                         I’m currently at the <span className="font-semibold text-black">The Apple Developer Academy</span>, learning iOS engineering along with marketing, interface design, and cybersecurity. 
                         This helps me build products that look great, feel great, and are secure at their core.
-                    </p>
+                    </p>*/}
 
                     {/* EDUCATION */}
                     <div className="mt-10">
@@ -36,10 +36,10 @@ const PersonalInfo = () => {
                                 Apple Developer Academy · Naples, Italy
                             </p>
                             <p className="text-black/60 font-semibold text-sm">
-                                    October, 2025 - present
+                                    October, 2025 - June, 2026
                                 </p>
                             <p className="text-black/70 mt-1">
-                                iOS Engineering · Human Interface Design · Project-based learning
+                                iOS Engineering · Human Interface Design · Project-based learning · Project management
                             </p>
                         </div>
                     </div>
@@ -54,15 +54,19 @@ const PersonalInfo = () => {
                             <div className="bg-white/20 backdrop-blur-sm border border-white/40 rounded-xl p-5 
                                             shadow-[inset_0_1px_0px_rgba(255,255,255,0.6),0_2px_8px_rgba(0,0,0,0.12)]">
                                 <p className="text-black font-semibold text-lg">
-                                    Full-Stack Engineering
+                                    Front-end Engineer
                                 </p>
                                 <p className="text-black/60 font-semibold text-sm">
-                                    2024 - present
+                                    October, 2025 - May, 2026
                                 </p>
-                                <p className="text-black/70 mt-1">
-                                    Building scalable applications using Spring Boot, React, JWT auth, PostgreSQL,
-                                    cloud storage systems, and automation tools such as Telegram Bots.
-                                </p>
+                                <div className="text-black/70 mt-1">
+                                    <ul>
+                                        <li>- Improved UI/UX for a project management web app used by small teams.</li>
+                                        <li>- Built reusable React components and consistent form validation to reduce frontend bugs.</li>
+                                        <li>- Integrated REST APIs for tasks, comments, file uploads, and notifications.</li>
+                                        <li>- Streamlined dashboard and task workflows to improve team efficiency.</li>
+                                    </ul>
+                                </div>
                             </div>
 
                             {/* Experience Item 2 */}
@@ -72,7 +76,7 @@ const PersonalInfo = () => {
                                     Data specialist at Nurlikum Mining Uzbek-French JV
                                 </p>
                                 <p className="text-black/60 font-semibold text-sm">
-                                    October, 2024 - October, 2025
+                                    October, 2024 - September, 2025
                                 </p>
                                 <div className="text-black/70 mt-1">
                                 <ul>
