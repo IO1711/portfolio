@@ -20,6 +20,26 @@ const AppLayout = () => {
 
     const projects = [
         {
+            "id" : 2,
+            "platform" : "web",
+            "title" : "Consulting website",
+            "images" : ["/consulting1.png", "/consulting2.png", "/consulting3.png"],
+            "description" : "A secure, full-stack consulting management platform built with <b>JWT authentication</b>, cloud document storage via <b>Wasabi</b>, real-time <b>Telegram bot</b> notifications, and granular role/enrollment-based access control. Engineered for efficiency, automation, and scalability—showcasing strong expertise in modern backend architecture, frontend UX, and system integration.",
+            "link" : "https://consultingozoda.netlify.app",
+            "linkDesc" : "",
+            "techStack" : ["JavaScript", "React", "Zustand", "React Router", "Java", "Spring Boot", "Spring Security", "PostgreSQL"]
+        },
+        {
+            "id" : 6,
+            "platform" : "web",
+            "title" : "SuperMarket",
+            "images" : ["/superm_01.png", "/superm_02.png", "/superm_03.png", "/superm_04.png"],
+            "description" : "Supermarket website that utilizes Stripe for payment",
+            "link" : "https://supermapp.netlify.app/",
+            "linkDesc" : "",
+            "techStack" : ["JavaScript", "Vite", "React", "CSS", "Stripe"]
+        },
+        {
             "id" : 5,
             "platform" : "web",
             "title" : "Tool to fix AI generated tables",
@@ -48,16 +68,6 @@ const AppLayout = () => {
             "link" : "https://iamrich3d.netlify.app/",
             "linkDesc" : "",
             "techStack" : ["JavaScript", "Three.js"]
-        },
-        {
-            "id" : 2,
-            "platform" : "web",
-            "title" : "Consulting website",
-            "images" : ["/consulting1.png", "/consulting2.png", "/consulting3.png"],
-            "description" : "A secure, full-stack consulting management platform built with <b>JWT authentication</b>, cloud document storage via <b>Wasabi</b>, real-time <b>Telegram bot</b> notifications, and granular role/enrollment-based access control. Engineered for efficiency, automation, and scalability—showcasing strong expertise in modern backend architecture, frontend UX, and system integration.",
-            "link" : "https://consultingozoda.netlify.app",
-            "linkDesc" : "",
-            "techStack" : ["JavaScript", "React", "Zustand", "React Router", "Java", "Spring Boot", "Spring Security", "PostgreSQL"]
         },
         {
             "id" : 3,
