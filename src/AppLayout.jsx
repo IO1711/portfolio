@@ -20,7 +20,17 @@ const AppLayout = () => {
 
     const projects = [
         {
-            "id" : 2,
+            "id" : 0,
+            "platform" : "web",
+            "title" : "ManageIt",
+            "images" : ["/manageit_admin_1.png", "/manageit_admin_2.png", "/manageit_admin_3.png", "/manageit_admin_4.png", "/manageit_editor_1.png", "/manageit_editor_2.png", "/manageit_editor_3.png"],
+            "description" : "Item management system for museums. Created in collaboration with Museum Capodimonte in Naples/Italy. The software is hosted on a local server, admin mode is only activated on the server machone. Phone and web editor modes can be used only using the same local network as the server.",
+            "link" : "https://consultingozoda.netlify.app",
+            "linkDesc" : "",
+            "techStack" : ["JavaScript", "React", "Java", "Spring Boot", "Spring Security", "PostgreSQL", "Swift", "SwiftUI"]
+        },
+        {
+            "id" : 1,
             "platform" : "web",
             "title" : "Consulting website",
             "images" : ["/consulting1.png", "/consulting2.png", "/consulting3.png"],
@@ -30,7 +40,7 @@ const AppLayout = () => {
             "techStack" : ["JavaScript", "React", "Zustand", "React Router", "Java", "Spring Boot", "Spring Security", "PostgreSQL"]
         },
         {
-            "id" : 6,
+            "id" : 2,
             "platform" : "web",
             "title" : "SuperMarket",
             "images" : ["/superm_01.png", "/superm_02.png", "/superm_03.png", "/superm_04.png"],
@@ -40,7 +50,7 @@ const AppLayout = () => {
             "techStack" : ["JavaScript", "Vite", "React", "CSS", "Stripe"]
         },
         {
-            "id" : 5,
+            "id" : 3,
             "platform" : "web",
             "title" : "Tool to fix AI generated tables",
             "images" : ["/table_editor.png"],
@@ -60,7 +70,7 @@ const AppLayout = () => {
             "techStack" : ["TypeScript", "Node.js", "MCP", "Zod"]
         },
         {
-            "id" : 1,
+            "id" : 5,
             "platform" : "web",
             "title" : "IAmRich3D",
             "images" : ["/i_am_rich.png"],
@@ -70,7 +80,7 @@ const AppLayout = () => {
             "techStack" : ["JavaScript", "Three.js"]
         },
         {
-            "id" : 3,
+            "id" : 6,
             "platform" : "mobile",
             "title" : "Pick2Plot",
             "images" : ["/Pick2Plot_1.PNG", "/Pick2Plot_2.PNG", "/Pick2Plot_3.PNG"],

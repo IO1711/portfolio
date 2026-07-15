@@ -1,12 +1,19 @@
 import { useState } from "react";
+import FullScreen from "./FullScreen";
 
 const ProjectCard = (props) => {
   const images = props.images/*["/image1.png", "/image2.png", "/image3.png"]*/;
   const isMobileProject = props.platform === "mobile";
   const [index, setIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const nextImage = () => setIndex((i) => (i + 1) % images.length);
   const prevImage = () => setIndex((i) => (i - 1 + images.length) % images.length);
+  const openLightbox = (selectedIndex = index) => {
+    setIndex(selectedIndex);
+    setIsLightboxOpen(true);
+  };
+  const closeLightbox = () => setIsLightboxOpen(false);
 
   // auto slide
   /*useEffect(() => {
@@ -94,36 +101,48 @@ const ProjectCard = (props) => {
             ? "rounded-[32px] w-fit max-w-full" 
             : "rounded-[24px] h-72"}
         `}>
-        <img
-            src={images[index]}
-            className={`
-            block transition-all duration-500
-            ${isMobileProject
-                ? "h-auto max-h-[500px] w-auto max-w-full object-contain"
-                : "w-full h-full object-cover"}
-            `}
-        />
+        <button
+            type="button"
+            onClick={() => openLightbox(index)}
+            className="block h-full w-full cursor-zoom-in"
+            aria-label={`Open ${props.title} image ${index + 1} fullscreen`}
+        >
+          <img
+              src={images[index]}
+              alt={`${props.title} screenshot ${index + 1}`}
+              className={`
+              block transition-all duration-500
+              ${isMobileProject
+                  ? "h-auto max-h-[500px] w-auto max-w-full object-contain"
+                  : "w-full h-full object-cover"}
+              `}
+          />
+        </button>
 
         {/* Arrows */}
-        <button
+        {images.length > 1 && <button
+            type="button"
             onClick={prevImage}
             className="absolute left-4 top-1/2 -translate-y-1/2
                     bg-white/30 backdrop-blur-md border border-white/40
                     w-10 h-10 rounded-full flex items-center justify-center
                     hover:bg-white/50 transition"
+            aria-label="Show previous image"
         >
             ←
-        </button>
+        </button>}
 
-        <button
+        {images.length > 1 && <button
+            type="button"
             onClick={nextImage}
             className="absolute right-4 top-1/2 -translate-y-1/2
                     bg-white/30 backdrop-blur-md border border-white/40
                     w-10 h-10 rounded-full flex items-center justify-center
                     hover:bg-white/50 transition"
+            aria-label="Show next image"
         >
             →
-        </button>
+        </button>}
         </div>
 
 
@@ -137,7 +156,8 @@ const ProjectCard = (props) => {
             {images.map((src, i) => (
             <button
                 key={i}
-                onClick={() => setIndex(i)}
+                type="button"
+                onClick={() => openLightbox(i)}
                 className={`
                 overflow-hidden rounded-lg border transition
                 ${
@@ -152,6 +172,7 @@ const ProjectCard = (props) => {
             >
                 <img 
                 src={src} 
+                alt={`${props.title} thumbnail ${i + 1}`}
                 className={`
                     block object-cover
                     ${isMobileProject ? "h-auto max-h-28 w-auto max-w-16 object-contain" : "w-full h-full"}
@@ -164,6 +185,18 @@ const ProjectCard = (props) => {
         </div>
 
       </div>
+
+      <FullScreen
+        images={images}
+        index={index}
+        isOpen={isLightboxOpen}
+        title={props.title}
+        isMobileProject={isMobileProject}
+        onClose={closeLightbox}
+        onNext={nextImage}
+        onPrev={prevImage}
+        onSelect={setIndex}
+      />
     </div>
   );
 };
