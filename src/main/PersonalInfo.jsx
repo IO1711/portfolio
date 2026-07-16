@@ -1,7 +1,7 @@
-const PersonalInfo = () => {
+const PersonalInfo = (props) => {
     return (
         <>
-            <div className="w-full flex justify-center bg-cover md:bg-auto bg-left bg-[url(/portfolioBg_2.webp)] px-6 md:px-10 py-20 md:py-20">
+            <div ref={props.ref} className="w-full flex justify-center bg-cover md:bg-auto bg-left bg-[url(/portfolioBg_2.webp)] px-6 md:px-10 py-20 md:py-20">
 
                 {/* LIQUID GLASS CARD */}
                 <div

@@ -35,7 +35,7 @@ const ProjectCard = (props) => {
 
   return (
     <div className="
-      w-full max-w-[1200px] mx-auto mt-10 mb-10
+      w-auto max-w-[1200px] mx-1 mt-10 mb-10 md:w-full md:mx-auto
       rounded-[32px] p-10
       bg-white/20 backdrop-blur-2xl border border-white/30
       shadow-[0_20px_50px_rgba(0,0,0,0.1)]

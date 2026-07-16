@@ -4,11 +4,13 @@ import PersonalInfo from "./main/PersonalInfo";
 import Poster from "./main/Poster"
 import ProjectCard from "./main/ProjectCard";
 import Contact from "./main/Contact";
+import BackToTop from "./main/BackToTop";
 
 const AppLayout = () => {
 
     const projectRef = useRef(null);
     const contactRef = useRef(null);
+    const expRef = useRef(null);
 
     const handleViewProjects = () => {
         projectRef.current?.scrollIntoView({behavior: "smooth"});
@@ -16,6 +18,10 @@ const AppLayout = () => {
 
     const handleViewContacts = () => {
         contactRef.current?.scrollIntoView({behavior: "smooth"});
+    }
+
+    const handleViewExp = () => {
+        expRef.current?.scrollIntoView({behavior: "smooth"});
     }
 
     const projects = [
@@ -92,14 +98,15 @@ const AppLayout = () => {
     ];
 
     return <>
-        <Poster refFunction={handleViewProjects} handleViewContacts={handleViewContacts}/>
+        <Poster refFunction={handleViewProjects} handleViewContacts={handleViewContacts} handleViewExp={handleViewExp}/>
         <div ref={projectRef} id="projects" className="w-full flex justify-center text-6xl font-bold text-black/80 m-2">Projects</div>
         {projects.map( project => {
             return <ProjectCard key={project.id} platform={project.platform} title={project.title} images={project.images} description={project.description} link={project.link} linkDesc={project.linkDesc} techStack={project.techStack}/>
         })}
-        <PersonalInfo/>
+        <PersonalInfo ref={expRef} refFunction={handleViewExp}/>
         <Certification/>
         <Contact contactRef={contactRef} handleViewContacts={handleViewContacts}/>
+        <BackToTop />
     </>
 }
 

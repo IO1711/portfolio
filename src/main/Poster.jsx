@@ -80,12 +80,12 @@ const Poster = (props) => {
                 </div>
 
                 {/* BUTTONS */}
-                <div className="flex gap-6 mt-8">
+                <div className="flex flex-col gap-3 mt-8 md:flex-row md:gap-6">
                     <button
                         className="px-6 py-3 rounded-xl bg-[#3BB4FF] text-white 
                             backdrop-blur border border-[#00c8ff]/40 
                             hover:bg-[#00c8ff]/60 transition shadow-[0_0_20px_rgba(0,200,255,0.4)]
-                            relative z-20"
+                            relative z-20 w-full md:w-auto"
                         onClick={() => props.refFunction()}
                     >
                         View Projects
@@ -95,10 +95,20 @@ const Poster = (props) => {
                         className="px-6 py-3 rounded-xl bg-white/10 text-[#4A4A4A] 
                             border border-[rgba(0,0,0,0.15)] 
                             hover:bg-white/20 transition
-                            relative z-20"
+                            relative z-20 w-full md:w-auto"
                         onClick={() => props.handleViewContacts()}
                     >
                         Contact
+                    </button>
+
+                    <button
+                        className="px-6 py-3 rounded-xl bg-white/10 text-[#4A4A4A] 
+                            border border-[rgba(0,0,0,0.15)] 
+                            hover:bg-white/20 transition
+                            relative z-20 w-full md:w-auto"
+                        onClick={() => props.handleViewExp()}
+                    >
+                        Experience
                     </button>
                 </div>
             </div>
