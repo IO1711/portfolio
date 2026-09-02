@@ -54,17 +54,16 @@ const PersonalInfo = (props) => {
                             <div className="bg-white/20 backdrop-blur-sm border border-white/40 rounded-xl p-5 
                                             shadow-[inset_0_1px_0px_rgba(255,255,255,0.6),0_2px_8px_rgba(0,0,0,0.12)]">
                                 <p className="text-black font-semibold text-lg">
-                                    Front-end Engineer at LavoroChiaro
+                                    iOS developer at Turonbank ATB
                                 </p>
                                 <p className="text-black/60 font-semibold text-sm">
-                                    October, 2025 - May, 2026
+                                    August, 2026 - Present
                                 </p>
                                 <div className="text-black/70 mt-1">
                                     <ul>
-                                        <li>- Improved UI/UX for a project management web app used by small teams.</li>
-                                        <li>- Built reusable React components and consistent form validation to reduce frontend bugs.</li>
-                                        <li>- Integrated REST APIs for tasks, comments, file uploads, and notifications.</li>
-                                        <li>- Streamlined dashboard and task workflows to improve team efficiency.</li>
+                                        <li>- Implementing new features to the banking app MyTuron.</li>
+                                        <li>- Integrating thrid party technologies in the application.</li>
+                                        <li>- Collaborating with teams such as backend developers, designers and marketing team.</li>
                                     </ul>
                                 </div>
                             </div>

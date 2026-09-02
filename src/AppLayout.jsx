@@ -27,6 +27,16 @@ const AppLayout = () => {
     const projects = [
         {
             "id" : 0,
+            "platform" : "mobile",
+            "title" : "Skrbl",
+            "images" : ["/skrbl_1.webp", "/skrbl_2.webp", "/skrbl_3.webp"],
+            "description" : "Skrbl is an offline game where people who are nearby can play pictionary with each other. Perfect for parties, road trips and flights where you need to enjoy a fun game with your partner(s). Try it on AppStore.",
+            "link" : "https://apps.apple.com/uz/app/skrbl/id6796380362",
+            "linkDesc" : "",
+            "techStack" : ["Swift", "SwiftUI"]
+        },
+        {
+            "id" : 1,
             "platform" : "web",
             "title" : "ManageIt",
             "images" : ["/manageit_admin_1.webp", "/manageit_admin_2.webp", "/manageit_admin_3.webp", "/manageit_admin_4.webp", "/manageit_editor_1.webp", "/manageit_editor_2.webp", "/manageit_editor_3.webp"],
@@ -36,7 +46,7 @@ const AppLayout = () => {
             "techStack" : ["JavaScript", "React", "Java", "Spring Boot", "Spring Security", "PostgreSQL", "Swift", "SwiftUI"]
         },
         {
-            "id" : 1,
+            "id" : 2,
             "platform" : "web",
             "title" : "Consulting website",
             "images" : ["/consulting1.png", "/consulting2.png", "/consulting3.png"],
@@ -44,16 +54,6 @@ const AppLayout = () => {
             "link" : "https://consultingozoda.netlify.app",
             "linkDesc" : "",
             "techStack" : ["JavaScript", "React", "Zustand", "React Router", "Java", "Spring Boot", "Spring Security", "PostgreSQL"]
-        },
-        {
-            "id" : 2,
-            "platform" : "web",
-            "title" : "SuperMarket",
-            "images" : ["/superm_01.png", "/superm_02.png", "/superm_03.png", "/superm_04.png"],
-            "description" : "Supermarket website that utilizes Stripe for payment",
-            "link" : "https://supermapp.netlify.app/",
-            "linkDesc" : "",
-            "techStack" : ["JavaScript", "Vite", "React", "CSS", "Stripe"]
         },
         {
             "id" : 3,
@@ -77,16 +77,6 @@ const AppLayout = () => {
         },
         {
             "id" : 5,
-            "platform" : "web",
-            "title" : "IAmRich3D",
-            "images" : ["/i_am_rich.png"],
-            "description" : "A simple three.js webpage that utilizes 3D text and materials in Three.js",
-            "link" : "https://iamrich3d.netlify.app/",
-            "linkDesc" : "",
-            "techStack" : ["JavaScript", "Three.js"]
-        },
-        {
-            "id" : 6,
             "platform" : "mobile",
             "title" : "Pick2Plot",
             "images" : ["/Pick2Plot_1.PNG", "/Pick2Plot_2.PNG", "/Pick2Plot_3.PNG"],
