@@ -70,7 +70,10 @@ const FullScreen = ({
           )}
 
           <img
-            src={images[index]}
+            src={images[index].full}
+            width={images[index].width}
+            height={images[index].height}
+            fetchPriority="high"
             alt={`${title} fullscreen screenshot ${index + 1}`}
             className={`block max-h-full max-w-full rounded-2xl object-contain shadow-2xl ${
               isMobileProject ? "w-auto" : "w-auto"
@@ -91,9 +94,9 @@ const FullScreen = ({
 
         <div className="border-t border-white/10 bg-black/40 px-4 py-4 backdrop-blur-md md:px-8">
           <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-3">
-            {images.map((src, imageIndex) => (
+            {images.map((image, imageIndex) => (
               <button
-                key={`${src}-${imageIndex}`}
+                key={`${image.full}-${imageIndex}`}
                 type="button"
                 onClick={() => onSelect(imageIndex)}
                 className={`overflow-hidden rounded-xl border transition ${
@@ -104,7 +107,10 @@ const FullScreen = ({
                 aria-label={`Show fullscreen image ${imageIndex + 1}`}
               >
                 <img
-                  src={src}
+                  src={image.thumbnail}
+                  width={image.width}
+                  height={image.height}
+                  decoding="async"
                   alt={`${title} fullscreen thumbnail ${imageIndex + 1}`}
                   className="h-16 w-24 object-cover md:h-20 md:w-32"
                 />

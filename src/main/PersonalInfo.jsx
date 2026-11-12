@@ -54,7 +54,7 @@ const PersonalInfo = (props) => {
                             <div className="bg-white/20 backdrop-blur-sm border border-white/40 rounded-xl p-5 
                                             shadow-[inset_0_1px_0px_rgba(255,255,255,0.6),0_2px_8px_rgba(0,0,0,0.12)]">
                                 <p className="text-black font-semibold text-lg">
-                                    iOS developer at Turonbank ATB
+                                    iOS developer at Turonbank JSCB
                                 </p>
                                 <p className="text-black/60 font-semibold text-sm">
                                     August, 2026 - Present

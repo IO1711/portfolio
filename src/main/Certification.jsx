@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getImageAsset } from "../imageAssets";
 
 const Certification = () => {
 
@@ -31,6 +32,8 @@ const Certification = () => {
   ];
 
   const [index, setIndex] = useState(0);
+  const certificateImages = certificates.map((certificate) => getImageAsset(certificate.image));
+  const currentImage = certificateImages[index];
 
   const next = () => setIndex((i) => (i + 1) % certificates.length);
   const prev = () => setIndex((i) => (i - 1 + certificates.length) % certificates.length);
@@ -46,7 +49,11 @@ const Certification = () => {
         {/* MAIN CERTIFICATE */}
         <div className="relative rounded-[20px] overflow-hidden shadow-lg flex justify-center items-center h-[500px] bg-gray-50">
           <img
-            src={certificates[index].image}
+            src={currentImage.preview}
+            width={currentImage.width}
+            height={currentImage.height}
+            loading="lazy"
+            decoding="async"
             alt={certificates[index].title}
             className="max-h-full max-w-full object-contain"
           />
@@ -111,7 +118,11 @@ const Certification = () => {
               `}
             >
               <img
-                src={c.image}
+                src={certificateImages[i].thumbnail}
+                width={certificateImages[i].width}
+                height={certificateImages[i].height}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain"
               />
             </button>

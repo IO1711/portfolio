@@ -1,8 +1,9 @@
 import { useState } from "react";
 import FullScreen from "./FullScreen";
+import { getImageAsset } from "../imageAssets";
 
 const ProjectCard = (props) => {
-  const images = props.images/*["/image1.png", "/image2.png", "/image3.png"]*/;
+  const images = props.images.map(getImageAsset);
   const isMobileProject = props.platform === "mobile";
   const [index, setIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -108,7 +109,15 @@ const ProjectCard = (props) => {
             aria-label={`Open ${props.title} image ${index + 1} fullscreen`}
         >
           <img
-              src={images[index]}
+              src={images[index].preview}
+              srcSet={images[index].srcSet}
+              sizes={isMobileProject
+                ? "232px"
+                : "(min-width: 1280px) 576px, (min-width: 768px) 50vw, calc(100vw - 100px)"}
+              width={images[index].width}
+              height={images[index].height}
+              loading="lazy"
+              decoding="async"
               alt={`${props.title} screenshot ${index + 1}`}
               className={`
               block transition-all duration-500
@@ -153,7 +162,7 @@ const ProjectCard = (props) => {
             ${isMobileProject ? "mt-0 flex-col" : "mt-4"}
           `}
         >
-            {images.map((src, i) => (
+            {images.map((image, i) => (
             <button
                 key={i}
                 type="button"
@@ -171,7 +180,11 @@ const ProjectCard = (props) => {
                 `}
             >
                 <img 
-                src={src} 
+                src={image.thumbnail}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+                decoding="async"
                 alt={`${props.title} thumbnail ${i + 1}`}
                 className={`
                     block object-cover
