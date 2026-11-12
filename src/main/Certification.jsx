@@ -11,7 +11,7 @@ const Certification = () => {
       title: "Apple Developer Academy Certificate",
       image: "/apple_certificate.webp",
       pdf: "/apple_certificate.pdf",
-      issuer: "Apple Developer Acdemy / Universita Degli Studi di Napoli Federico II"
+      issuer: "Apple Developer Academy / Universita Degli Studi di Napoli Federico II"
     },
     {
       title: "Yandex DSA certificate",

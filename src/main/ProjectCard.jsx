@@ -90,7 +90,7 @@ const ProjectCard = (props) => {
               transition-all shadow-[0_0_20px_rgba(0,200,255,0.3)]
             "
           >
-            Visit Project Website →
+            {props.platform === "mobile" ? "Download on AppStore →" : "Visit Project Website →"}
           </a>}
           {/*00aaff*/
             props.link === "" && <p className="inline-block px-6 py-3 mt-2 rounded-xl

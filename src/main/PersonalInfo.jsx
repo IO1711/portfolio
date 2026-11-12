@@ -64,7 +64,7 @@ const PersonalInfo = (props) => {
                                 <div className="text-black/70 mt-1">
                                     <ul>
                                         <li>- Implementing new features to the banking app MyTuron.</li>
-                                        <li>- Integrating thrid party technologies in the application.</li>
+                                        <li>- Integrating thrid-party technologies in the application.</li>
                                         <li>- Collaborating with teams such as backend developers, designers and marketing team.</li>
                                     </ul>
                                 </div>
