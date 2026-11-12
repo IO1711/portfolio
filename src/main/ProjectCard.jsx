@@ -2,6 +2,7 @@ import { useState } from "react";
 import FullScreen from "./FullScreen";
 import { getImageAsset } from "../imageAssets";
 import QueuedImage from "../QueuedImage";
+import CrossfadeQueuedImage from "../CrossfadeQueuedImage";
 
 const ProjectCard = (props) => {
   const images = props.images.map(getImageAsset);
@@ -122,7 +123,7 @@ const ProjectCard = (props) => {
             className="block h-full w-full cursor-zoom-in"
             aria-label={`Open ${props.title} image ${index + 1} fullscreen`}
         >
-          <QueuedImage
+          <CrossfadeQueuedImage
               src={images[index].preview}
               srcSet={images[index].srcSet}
               sizes={isMobileProject
@@ -132,9 +133,10 @@ const ProjectCard = (props) => {
               urgent={urgentPreview}
               width={images[index].width}
               height={images[index].height}
-              decoding="async"
               alt={`${props.title} screenshot ${index + 1}`}
-              className={`
+              stageClassName={isMobileProject ? "relative block w-fit max-w-full" : "relative block h-full w-full"}
+              overlayStyle={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: isMobileProject ? "contain" : "cover" }}
+              imageClassName={`
               block transition-all duration-500
               ${isMobileProject
                   ? "h-auto max-h-[500px] w-auto max-w-full object-contain"

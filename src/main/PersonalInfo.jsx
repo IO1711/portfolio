@@ -21,8 +21,7 @@ const PersonalInfo = (props) => {
 
                     {/* DESCRIPTION */}
                     <p className="text-lg md:text-xl text-black/90 leading-relaxed">
-                        I create fast, elegant websites with full end-to-end functionality — clean UI, solid back-end, and everything in between. 
-                        I love turning ideas into polished, high-performance digital experiences.
+                        I create fast, elegant iOS apps with full end-to-end functionality — intuitive SwiftUI interfaces, solid back-end integration, and everything in between. I love turning ideas into polished, high-performance mobile experiences.
                     </p>
                     {/*<p className="text-lg md:text-xl text-black/90 leading-relaxed mt-10">
                         I’m currently at the <span className="font-semibold text-black">The Apple Developer Academy</span>, learning iOS engineering along with marketing, interface design, and cybersecurity. 

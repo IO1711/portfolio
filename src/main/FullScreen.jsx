@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import QueuedImage from "../QueuedImage";
-import { useQueuedImage } from "../imageHooks";
+import CrossfadeQueuedImage from "../CrossfadeQueuedImage";
 
 const FullScreen = ({
   images,
@@ -14,7 +14,6 @@ const FullScreen = ({
   onPrev,
   onSelect
 }) => {
-  const fullImage = useQueuedImage(isOpen ? images[index].full : null, -1, isOpen);
   useEffect(() => {
     if (!isOpen) {
       return undefined;
@@ -72,14 +71,17 @@ const FullScreen = ({
             </button>
           )}
 
-          {!fullImage && <span className="absolute text-sm text-white/70">Loading full image…</span>}
-          <img
-            src={fullImage || undefined}
+          <CrossfadeQueuedImage
+            src={images[index].full}
+            priority={-1}
+            eager
             width={images[index].width}
             height={images[index].height}
-            style={{ visibility: fullImage ? "visible" : "hidden" }}
             alt={`${title} fullscreen screenshot ${index + 1}`}
-            className={`block max-h-full max-w-full rounded-2xl object-contain shadow-2xl ${
+            stageClassName="relative flex h-full w-full items-center justify-center"
+            overlayStyle={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
+            placeholder={<span className="absolute inset-0 flex items-center justify-center text-sm text-white/70">Loading full image…</span>}
+            imageClassName={`block max-h-full max-w-full rounded-2xl object-contain shadow-2xl ${
               isMobileProject ? "w-auto" : "w-auto"
             }`}
           />

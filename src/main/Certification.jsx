@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getImageAsset } from "../imageAssets";
 import QueuedImage from "../QueuedImage";
+import CrossfadeQueuedImage from "../CrossfadeQueuedImage";
 
 const Certification = () => {
 
@@ -66,15 +67,16 @@ const Certification = () => {
 
         {/* MAIN CERTIFICATE */}
         <div className="relative rounded-[20px] overflow-hidden shadow-lg flex justify-center items-center h-[500px] bg-gray-50">
-          <QueuedImage
+          <CrossfadeQueuedImage
             src={currentImage.preview}
             priority={300}
             urgent={urgentPreview}
             width={currentImage.width}
             height={currentImage.height}
-            decoding="async"
             alt={certificates[index].title}
-            className="max-h-full max-w-full object-contain"
+            stageClassName="relative flex h-full w-full items-center justify-center"
+            imageClassName="max-h-full max-w-full object-contain"
+            overlayStyle={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}
           />
 
           {/* LEFT ARROW */}
