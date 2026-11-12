@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getImageAsset } from "../imageAssets";
+import QueuedImage from "../QueuedImage";
 
 const Certification = () => {
 
@@ -10,6 +11,12 @@ const Certification = () => {
       image: "/apple_certificate.webp",
       pdf: "/apple_certificate.pdf",
       issuer: "Apple Developer Acdemy / Universita Degli Studi di Napoli Federico II"
+    },
+    {
+      title: "Yandex DSA certificate",
+      image: "/yandex_certificate.webp",
+      pdf: "/yandex_certificate.pdf",
+      issuer: "Yandex"
     },
     {
       title: "React framework certificate",
@@ -32,11 +39,22 @@ const Certification = () => {
   ];
 
   const [index, setIndex] = useState(0);
+  const [urgentPreview, setUrgentPreview] = useState(false);
   const certificateImages = certificates.map((certificate) => getImageAsset(certificate.image));
   const currentImage = certificateImages[index];
 
-  const next = () => setIndex((i) => (i + 1) % certificates.length);
-  const prev = () => setIndex((i) => (i - 1 + certificates.length) % certificates.length);
+  const next = () => {
+    setUrgentPreview(true);
+    setIndex((i) => (i + 1) % certificates.length);
+  };
+  const prev = () => {
+    setUrgentPreview(true);
+    setIndex((i) => (i - 1 + certificates.length) % certificates.length);
+  };
+  const selectCertificate = (selectedIndex) => {
+    setUrgentPreview(true);
+    setIndex(selectedIndex);
+  };
 
   return (
     <div id="certification" className="w-full py-20 bg-white">
@@ -48,11 +66,12 @@ const Certification = () => {
 
         {/* MAIN CERTIFICATE */}
         <div className="relative rounded-[20px] overflow-hidden shadow-lg flex justify-center items-center h-[500px] bg-gray-50">
-          <img
+          <QueuedImage
             src={currentImage.preview}
+            priority={300}
+            urgent={urgentPreview}
             width={currentImage.width}
             height={currentImage.height}
-            loading="lazy"
             decoding="async"
             alt={certificates[index].title}
             className="max-h-full max-w-full object-contain"
@@ -108,7 +127,7 @@ const Certification = () => {
           {certificates.map((c, i) => (
             <button
               key={i}
-              onClick={() => setIndex(i)}
+              onClick={() => selectCertificate(i)}
               className={`
                 w-20 h-16 rounded-lg overflow-hidden border transition
                 ${i === index 
@@ -117,11 +136,11 @@ const Certification = () => {
                 }
               `}
             >
-              <img
+              <QueuedImage
                 src={certificateImages[i].thumbnail}
+                priority={301 + i}
                 width={certificateImages[i].width}
                 height={certificateImages[i].height}
-                loading="lazy"
                 decoding="async"
                 className="w-full h-full object-contain"
               />

@@ -1,8 +1,9 @@
 import { FaLinkedin } from "react-icons/fa";
+import { SiGithub, SiGmail, SiTelegram } from "react-icons/si";
 
-const Contact = (props) => {
+const Contact = () => {
     return (
-        <div ref={props.contactRef} className="w-full bg-[#F2F3F5] py-20"> 
+        <div id="contact" className="w-full bg-[#F2F3F5] py-20">
             {/* Gray full-width background */}
 
             <div className="max-w-xl mx-auto px-6">
@@ -24,7 +25,7 @@ const Contact = (props) => {
                         {/* EMAIL */}
                         <div className="flex items-center gap-4">
                             <div className="bg-black rounded-lg p-2 flex items-center justify-center">
-                                <img src="https://cdn.simpleicons.org/gmail/FFFFFF" className="w-6 h-6" />
+                                <SiGmail className="w-6 h-6 text-white" />
                             </div>
                             <a 
                                 href="mailto:rayimovbilolbek@gmail.com"
@@ -37,7 +38,7 @@ const Contact = (props) => {
                         {/* GITHUB */}
                         <div className="flex items-center gap-4">
                             <div className="bg-black rounded-lg p-2 flex items-center justify-center">
-                                <img src="https://cdn.simpleicons.org/github/FFFFFF" className="w-6 h-6" />
+                                <SiGithub className="w-6 h-6 text-white" />
                             </div>
                             <a 
                                 href="https://github.com/io1711"
@@ -65,7 +66,7 @@ const Contact = (props) => {
                         {/* TELEGRAM */}
                         <div className="flex items-center gap-4">
                             <div className="bg-black rounded-lg p-2 flex items-center justify-center">
-                                <img src="https://cdn.simpleicons.org/telegram/FFFFFF" className="w-6 h-6" />
+                                <SiTelegram className="w-6 h-6 text-white" />
                             </div>
                             <a 
                                 href="https://t.me/Bilolbek17"

@@ -18,6 +18,7 @@ const dimensions = {
   "/Pick2Plot_2.webp": [1170, 2532],
   "/Pick2Plot_3.webp": [1170, 2532],
   "/apple_certificate.webp": [3300, 2375],
+  "/yandex_certificate.webp": [2479, 3508],
   "/react_certificate.webp": [8533, 6033],
   "/js_certificate.webp": [8533, 6033],
   "/spring_certificate.webp": [3508, 2479],

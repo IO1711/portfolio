@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
+import QueuedImage from "../QueuedImage";
+import { useQueuedImage } from "../imageHooks";
 
 const FullScreen = ({
   images,
@@ -12,6 +14,7 @@ const FullScreen = ({
   onPrev,
   onSelect
 }) => {
+  const fullImage = useQueuedImage(isOpen ? images[index].full : null, -1, isOpen);
   useEffect(() => {
     if (!isOpen) {
       return undefined;
@@ -69,11 +72,12 @@ const FullScreen = ({
             </button>
           )}
 
+          {!fullImage && <span className="absolute text-sm text-white/70">Loading full image…</span>}
           <img
-            src={images[index].full}
+            src={fullImage || undefined}
             width={images[index].width}
             height={images[index].height}
-            fetchPriority="high"
+            style={{ visibility: fullImage ? "visible" : "hidden" }}
             alt={`${title} fullscreen screenshot ${index + 1}`}
             className={`block max-h-full max-w-full rounded-2xl object-contain shadow-2xl ${
               isMobileProject ? "w-auto" : "w-auto"
@@ -106,8 +110,10 @@ const FullScreen = ({
                 }`}
                 aria-label={`Show fullscreen image ${imageIndex + 1}`}
               >
-                <img
+                <QueuedImage
                   src={image.thumbnail}
+                  priority={3 + imageIndex / 100}
+                  urgent
                   width={image.width}
                   height={image.height}
                   decoding="async"

@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import Certification from "./main/Certification";
 import PersonalInfo from "./main/PersonalInfo";
 import Poster from "./main/Poster"
@@ -9,15 +9,15 @@ import BackToTop from "./main/BackToTop";
 const AppLayout = () => {
 
     const projectRef = useRef(null);
-    const contactRef = useRef(null);
     const expRef = useRef(null);
+    const setExperienceNode = useCallback((node) => { expRef.current = node; }, []);
 
     const handleViewProjects = () => {
         projectRef.current?.scrollIntoView({behavior: "smooth"});
     }
 
     const handleViewContacts = () => {
-        contactRef.current?.scrollIntoView({behavior: "smooth"});
+        document.getElementById("contact")?.scrollIntoView({behavior: "smooth"});
     }
 
     const handleViewExp = () => {
@@ -91,11 +91,11 @@ const AppLayout = () => {
         <Poster refFunction={handleViewProjects} handleViewContacts={handleViewContacts} handleViewExp={handleViewExp}/>
         <div ref={projectRef} id="projects" className="w-full flex justify-center text-6xl font-bold text-black/80 m-2">Projects</div>
         {projects.map( project => {
-            return <ProjectCard key={project.id} platform={project.platform} title={project.title} images={project.images} description={project.description} link={project.link} linkDesc={project.linkDesc} techStack={project.techStack}/>
+            return <ProjectCard key={project.id} loadOrder={project.id} platform={project.platform} title={project.title} images={project.images} description={project.description} link={project.link} linkDesc={project.linkDesc} techStack={project.techStack}/>
         })}
-        <PersonalInfo ref={expRef} refFunction={handleViewExp}/>
+        <PersonalInfo setExperienceNode={setExperienceNode} refFunction={handleViewExp}/>
         <Certification/>
-        <Contact contactRef={contactRef} handleViewContacts={handleViewContacts}/>
+        <Contact handleViewContacts={handleViewContacts}/>
         <BackToTop />
     </>
 }

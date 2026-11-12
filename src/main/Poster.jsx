@@ -2,8 +2,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import { FaJava } from "react-icons/fa6";
+import { SiJavascript, SiNextdotjs, SiPostgresql, SiReact, SiSpringboot } from "react-icons/si";
+import { useQueuedImage } from "../imageHooks";
 
 const Poster = (props) => {
+    const background = useQueuedImage("/portfolioBg2-1.webp", 0);
+    const portrait = useQueuedImage("/profile.webp", 1);
     useEffect(() => {
         AOS.init({
             duration: 800,
@@ -13,7 +17,10 @@ const Poster = (props) => {
     }, []);
 
     return (
-        <div className="w-full bg-cover bg-left bg-[url(/portfolioBg2-1.webp)] px-10 py-30 md:py-50 relative">
+        <div
+            className="w-full bg-[#dedede] bg-cover bg-left px-10 py-30 md:py-50 relative"
+            style={background ? { backgroundImage: `url("${background}")` } : undefined}
+        >
 
             <div className="
                 block md:hidden 
@@ -25,9 +32,10 @@ const Poster = (props) => {
                 z-30
             ">
                 <img
-                    src="/profile.webp"
+                    src={portrait || undefined}
                     alt="Bilolbek Rayimov"
                     className="absolute inset-0 h-full w-full object-cover"
+                    style={{ visibility: portrait ? "visible" : "hidden" }}
                 />
             </div>
 
@@ -41,9 +49,10 @@ const Poster = (props) => {
                 z-30
             ">
                 <img
-                    src="/profile.webp"
+                    src={portrait || undefined}
                     alt="Bilolbek Rayimov"
                     className="absolute inset-0 h-full w-full object-cover"
+                    style={{ visibility: portrait ? "visible" : "hidden" }}
                 />
             </div>
 
@@ -71,12 +80,12 @@ const Poster = (props) => {
 
                 {/* TECH STACK ICONS */}
                 <div className="flex md:w-[50%] items-center gap-4 mt-5 bg-black backdrop-blur-md px-3 py-2 rounded-xl shadow-inner">
-                    <img src="https://cdn.simpleicons.org/javascript/FFFFFF" className="w-7 h-7" />
-                    <img src="https://cdn.simpleicons.org/react/FFFFFF" className="w-7 h-7" />
-                    <img src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" className="w-7 h-7" />
+                    <SiJavascript className="w-7 h-7 text-white" />
+                    <SiReact className="w-7 h-7 text-white" />
+                    <SiNextdotjs className="w-7 h-7 text-white" />
                     <FaJava className="w-7 h-7 text-white" />
-                    <img src="https://cdn.simpleicons.org/springboot/FFFFFF" className="w-7 h-7" />
-                    <img src="https://cdn.simpleicons.org/postgresql/FFFFFF" className="w-7 h-7" />
+                    <SiSpringboot className="w-7 h-7 text-white" />
+                    <SiPostgresql className="w-7 h-7 text-white" />
                 </div>
 
                 {/* BUTTONS */}

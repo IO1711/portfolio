@@ -1,18 +1,32 @@
 import { useState } from "react";
 import FullScreen from "./FullScreen";
 import { getImageAsset } from "../imageAssets";
+import QueuedImage from "../QueuedImage";
 
 const ProjectCard = (props) => {
   const images = props.images.map(getImageAsset);
   const isMobileProject = props.platform === "mobile";
   const [index, setIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [urgentPreview, setUrgentPreview] = useState(false);
+  const loadPriority = 10 + props.loadOrder * 20;
 
-  const nextImage = () => setIndex((i) => (i + 1) % images.length);
-  const prevImage = () => setIndex((i) => (i - 1 + images.length) % images.length);
+  const nextImage = () => {
+    setUrgentPreview(true);
+    setIndex((i) => (i + 1) % images.length);
+  };
+  const prevImage = () => {
+    setUrgentPreview(true);
+    setIndex((i) => (i - 1 + images.length) % images.length);
+  };
   const openLightbox = (selectedIndex = index) => {
+    setUrgentPreview(true);
     setIndex(selectedIndex);
     setIsLightboxOpen(true);
+  };
+  const selectImage = (selectedIndex) => {
+    setUrgentPreview(true);
+    setIndex(selectedIndex);
   };
   const closeLightbox = () => setIsLightboxOpen(false);
 
@@ -97,7 +111,7 @@ const ProjectCard = (props) => {
 
         {/* MAIN IMAGE */}
         <div className={`
-        relative overflow-hidden shadow-xl flex items-center justify-center
+        relative overflow-hidden bg-slate-100 shadow-xl flex items-center justify-center
         ${isMobileProject
             ? "rounded-[32px] w-fit max-w-full" 
             : "rounded-[24px] h-72"}
@@ -108,15 +122,16 @@ const ProjectCard = (props) => {
             className="block h-full w-full cursor-zoom-in"
             aria-label={`Open ${props.title} image ${index + 1} fullscreen`}
         >
-          <img
+          <QueuedImage
               src={images[index].preview}
               srcSet={images[index].srcSet}
               sizes={isMobileProject
                 ? "232px"
                 : "(min-width: 1280px) 576px, (min-width: 768px) 50vw, calc(100vw - 100px)"}
+              priority={loadPriority}
+              urgent={urgentPreview}
               width={images[index].width}
               height={images[index].height}
-              loading="lazy"
               decoding="async"
               alt={`${props.title} screenshot ${index + 1}`}
               className={`
@@ -179,11 +194,12 @@ const ProjectCard = (props) => {
                     : "w-20 h-14"}       // wide thumbnails for web
                 `}
             >
-                <img 
+                <QueuedImage
                 src={image.thumbnail}
+                priority={loadPriority + 1 + i}
+                urgent={isLightboxOpen}
                 width={image.width}
                 height={image.height}
-                loading="lazy"
                 decoding="async"
                 alt={`${props.title} thumbnail ${i + 1}`}
                 className={`
@@ -208,7 +224,7 @@ const ProjectCard = (props) => {
         onClose={closeLightbox}
         onNext={nextImage}
         onPrev={prevImage}
-        onSelect={setIndex}
+        onSelect={selectImage}
       />
     </div>
   );

@@ -1,7 +1,10 @@
+import { useQueuedBackground } from "../imageHooks";
+
 const PersonalInfo = (props) => {
+    const [backgroundRef, backgroundUrl] = useQueuedBackground("/portfolioBg_2.webp", 250, props.setExperienceNode);
     return (
         <>
-            <div ref={props.ref} className="w-full flex justify-center bg-cover md:bg-auto bg-left bg-[url(/portfolioBg_2.webp)] px-6 md:px-10 py-20 md:py-20">
+            <div ref={backgroundRef} style={backgroundUrl ? { backgroundImage: `url("${backgroundUrl}")` } : undefined} className="w-full flex justify-center bg-[#dedede] bg-cover md:bg-auto bg-left px-6 md:px-10 py-20 md:py-20">
 
                 {/* LIQUID GLASS CARD */}
                 <div
@@ -96,6 +99,3 @@ const PersonalInfo = (props) => {
 };
 
 export default PersonalInfo;
-
-
-/* bg-cover bg-left bg-[url(/portfolioBg_2.webp)] */
