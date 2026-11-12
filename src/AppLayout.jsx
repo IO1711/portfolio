@@ -41,8 +41,8 @@ const AppLayout = () => {
             "title" : "ManageIt",
             "images" : ["/manageit_admin_1.webp", "/manageit_admin_2.webp", "/manageit_admin_3.webp", "/manageit_admin_4.webp", "/manageit_editor_1.webp", "/manageit_editor_2.webp", "/manageit_editor_3.webp"],
             "description" : "Item management system for museums. Created in collaboration with Museum Capodimonte in Naples/Italy. The software is hosted on a local server, admin mode is only activated on the server machine. Phone and web editor modes can be used only using the same local network as the server.",
-            "link" : "https://consultingozoda.netlify.app",
-            "linkDesc" : "",
+            "link" : "",
+            "linkDesc" : "Project is hosted in a private server",
             "techStack" : ["JavaScript", "React", "Java", "Spring Boot", "Spring Security", "PostgreSQL", "Swift", "SwiftUI"]
         },
         {
